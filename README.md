@@ -46,7 +46,7 @@ python main.py
 - The bot will fetch and summarize news for the new topic automatically.
 
 ## Scheduling (Optional)
-- Use `cron` or a Python scheduler to run the bot twice a week as desired.
+- Use `crontab` or a Python scheduler to run the bot twice a week as desired.
 
 
 ## Who Created This Digital Influencer Electron App?
