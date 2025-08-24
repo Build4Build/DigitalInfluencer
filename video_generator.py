@@ -2,7 +2,7 @@
 # In production, use TTS (gTTS) and moviepy, or a virtual influencer API
 
 from gtts import gTTS
-from moviepy.editor import ImageClip, AudioFileClip, CompositeVideoClip
+from moviepy.editor import ImageClip, AudioFileClip
 import os
 
 def generate_video(script_text: str) -> str:
@@ -19,9 +19,23 @@ def generate_video(script_text: str) -> str:
     # Add title text (optional, short)
     title = "Australian Immigration News"
     try:
-        font = ImageFont.truetype("arial.ttf", 60)
-    except:
-        font = None  # Use default if arial not found
+        # Try different font paths for cross-platform compatibility
+        font_paths = [
+            "arial.ttf",  # Windows
+            "/System/Library/Fonts/Arial.ttf",  # macOS
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"  # Linux
+        ]
+        font = None
+        for font_path in font_paths:
+            try:
+                font = ImageFont.truetype(font_path, 60)
+                break
+            except (OSError, IOError):
+                continue
+        if font is None:
+            font = ImageFont.load_default()
+    except Exception:
+        font = ImageFont.load_default()
     d.text((50, 50), title, fill=(255,255,255), font=font)
     img.save(img_path)
 

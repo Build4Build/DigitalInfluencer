@@ -1,6 +1,6 @@
 # Virtual Influencer YouTube Bot 🤖
 
-This project is a fully automated, easily re-themable virtual influencer that fetches the latest news in a specific niche (default: Australian immigration), generates a narrated video, and uploads it to YouTube.
+This project is a fully automated, easily re-themable virtual influencer that fetches the latest news in a specific niche, generates a narrated video, and uploads it to YouTube.
 
 ## Features
 - Fetches real news using NewsAPI (free tier)
@@ -51,7 +51,7 @@ python main.py
 
 ## Who Created This Digital Influencer Electron App?
 
-**Pierre-Henry Soria** — a **super passionate engineer** who loves automating content creation efficiently!
+**Pierre-Henry Soria**. A **super passionate engineer** who loves automating content creation efficiently!
 
 Enthusiast of YouTube, AI, learning, and—of course—writing! Find me at [pH7.me](https://ph7.me)
 

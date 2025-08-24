@@ -5,6 +5,7 @@ import os
 import requests
 from config import NEWS_API_KEY
 
+
 def fetch_latest_news(niche: str):
     # Keywords for Australian immigration and relevant visas
     keywords = [
@@ -42,4 +43,4 @@ def fetch_latest_news(niche: str):
         return news_items
     except Exception as e:
         print(f"Error fetching news: {e}")
-        return [] 
+        return []
