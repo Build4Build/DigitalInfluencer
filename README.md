@@ -25,6 +25,7 @@ GOOGLE_APPLICATION_CREDENTIALS=client_secret.json  # Path to your YouTube OAuth 
 YOUTUBE_CHANNEL_ID=your_channel_id
 NARRATOR_VOICE=default
 NICHE="Australian immigration news"
+VIDEO_TITLE="Australian Immigration News"
 POST_SCHEDULE="0 9 * * 1,4"
 OPENAI_API_KEY=your_openai_api_key  # Optional, for better summarization
 ```
