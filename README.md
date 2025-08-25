@@ -26,6 +26,7 @@ YOUTUBE_CHANNEL_ID=your_channel_id
 NARRATOR_VOICE=default
 NICHE="Australian immigration news"
 VIDEO_TITLE="Australian Immigration News"
+KEYWORDS="Australia immigration,Australia permanent visa,Australia visa 190,Australia visa 186,Department of Home Affairs Visa Processing Time,Australia skilled migration,Australia PR changes,Australia migration update"
 POST_SCHEDULE="0 9 * * 1,4"
 OPENAI_API_KEY=your_openai_api_key  # Optional, for better summarization
 ```
@@ -51,6 +52,8 @@ python main.py
 
 ## Changing the Niche/Theme
 - Edit the `NICHE` variable in `.env` to any topic (e.g., "crypto news", "AI breakthroughs", etc.).
+- Update the `VIDEO_TITLE` to match your niche (e.g., "Crypto Daily Updates", "AI News Weekly").
+- Customize the `KEYWORDS` with comma-separated search terms relevant to your niche (e.g., "Bitcoin,Ethereum,cryptocurrency,crypto market,blockchain").
 - The bot will fetch and summarize news for the new topic automatically.
 
 ## Scheduling (Optional)

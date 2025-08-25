@@ -3,21 +3,12 @@
 
 import os
 import requests
-from config import NEWS_API_KEY
+from config import NEWS_API_KEY, KEYWORDS
 
 
 def fetch_latest_news(niche: str):
-    # Keywords for Australian immigration and relevant visas
-    keywords = [
-        "Australia immigration",
-        "Australia permanent visa",
-        "Australia visa 190",
-        "Australia visa 186",
-        "Department of Home Affairs Visa Processing Time"
-        "Australia skilled migration",
-        "Australia PR changes",
-        "Australia migration update"
-    ]
+    # Get keywords from environment configuration
+    keywords = [keyword.strip() for keyword in KEYWORDS.split(",")]
     query = " OR ".join(keywords)
     url = "https://newsapi.org/v2/everything"
     params = {

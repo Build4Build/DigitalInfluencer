@@ -10,6 +10,9 @@ NICHE = os.getenv("NICHE", "Australian immigration news")
 # Video configuration
 VIDEO_TITLE = os.getenv("VIDEO_TITLE", "Australian Immigration News")
 
+# News search keywords (comma-separated)
+KEYWORDS = os.getenv("KEYWORDS", "Australia immigration,Australia permanent visa,Australia visa 190,Australia visa 186,Department of Home Affairs Visa Processing Time,Australia skilled migration,Australia PR changes,Australia migration update")
+
 # API keys and credentials
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
 NEWS_API_KEY = os.getenv("NEWS_API_KEY")
