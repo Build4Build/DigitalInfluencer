@@ -44,7 +44,7 @@ OPENAI_API_KEY=your_openai_api_key  # Optional, for better summarization
 ### 4. Run the bot
 
 ```sh
-python main.py
+python main.py # or python3 main.py
 ```
 
 - The script will fetch news, generate a summary, create a video, and upload (or simulate upload) to YouTube.
