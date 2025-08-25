@@ -4,15 +4,17 @@
 from gtts import gTTS
 from moviepy.editor import ImageClip, AudioFileClip
 import os
+from config import VIDEO_TITLE
+
 
 def generate_video(script_text: str) -> str:
     if not script_text or not script_text.strip():
         raise ValueError("Script text cannot be empty")
-    
+
     audio_path = "output_audio.mp3"
     img_path = "background.png"
     video_path = "output_video.mp4"
-    
+
     try:
         # Generate TTS audio from script
         tts = gTTS(text=script_text, lang='en')
@@ -20,10 +22,11 @@ def generate_video(script_text: str) -> str:
 
         # Create a solid color background image (1280x720)
         from PIL import Image, ImageDraw, ImageFont
-        img = Image.new('RGB', (1280, 720), color=(30, 144, 255))  # Dodger blue
+        img = Image.new('RGB', (1280, 720), color=(
+            30, 144, 255))  # Dodger blue
         d = ImageDraw.Draw(img)
         # Add title text (optional, short)
-        title = "Australian Immigration News"
+        title = VIDEO_TITLE
         try:
             # Try different font paths for cross-platform compatibility
             font_paths = [
@@ -42,7 +45,7 @@ def generate_video(script_text: str) -> str:
                 font = ImageFont.load_default()
         except Exception:
             font = ImageFont.load_default()
-        d.text((50, 50), title, fill=(255,255,255), font=font)
+        d.text((50, 50), title, fill=(255, 255, 255), font=font)
         img.save(img_path)
 
         # Create video clip from image
@@ -55,7 +58,8 @@ def generate_video(script_text: str) -> str:
             image_clip = image_clip.set_audio(audio_clip)
 
             # Generate video
-            image_clip.write_videofile(video_path, fps=24, codec="libx264", audio_codec="aac")
+            image_clip.write_videofile(
+                video_path, fps=24, codec="libx264", audio_codec="aac")
         finally:
             # Properly close clips to free memory
             if audio_clip:
@@ -72,4 +76,4 @@ def generate_video(script_text: str) -> str:
                 except OSError:
                     pass  # Ignore cleanup errors
 
-    return video_path 
+    return video_path
