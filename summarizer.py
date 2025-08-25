@@ -15,7 +15,7 @@ def summarize_news(news_items):
             prompt += f"- {item['title']}: {item['content']}\n"
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4.1",
                 messages=[{"role": "user", "content": prompt}],
                 max_tokens=400
             )
