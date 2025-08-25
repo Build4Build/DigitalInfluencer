@@ -29,11 +29,17 @@ POST_SCHEDULE="0 9 * * 1,4"
 OPENAI_API_KEY=your_openai_api_key  # Optional, for better summarization
 ```
 
-- Get a free NewsAPI key at https://newsapi.org/
-- (Optional) Get a free OpenAI key at https://platform.openai.com/
-- For YouTube upload, create OAuth credentials in Google Cloud Console and download `client_secret.json`.
+### 3. Update your freshly created `.env`
 
-### 3. Run the bot
+- **Get a free NewsAPI key** at https://newsapi.org by [registering for an API key](https://newsapi.org/register) and updating `NEWS_API_KEY`
+- For **YouTube upload**, in [Google Cloud Console APIs Credentials](https://console.cloud.google.com/apis/credentials), create "OAuth" credentials for a desktop application (select *External* for *User Type*), download `client_secret.json`, and save it as `client_secrets.json` in the project root directory
+- Set `YOUTUBE_API_KEY` to your Google YouTube API key
+- Add your [YouTube channel ID](https://www.youtube.com/account_advanced) to `YOUTUBE_CHANNEL_ID`
+- (Optional but recommended) Get an **OpenAI key** at https://platform.openai.com/ and update `OPENAI_API_KEY`
+
+
+### 4. Run the bot
+
 ```sh
 python main.py
 ```
